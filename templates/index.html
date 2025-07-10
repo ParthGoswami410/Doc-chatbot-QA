@@ -1,0 +1,176 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Document Chatbot</title>
+</head>
+<body>
+    <h1>Document QA Chatbot</h1>
+
+    <form id="uploadForm">
+        <label>Upload Folder Path:</label>
+        <input type="text" name="folder_path" required>
+        <button type="submit">Upload & Ingest</button>
+    </form>
+
+    <br>
+
+    <form id="askForm">
+        <label>Ask a Question:</label>
+        <input type="text" name="question" required>
+        <button type="submit">Ask</button>
+    </form>
+
+    <div id="responseBox"></div>
+
+    <script>
+        document.getElementById("uploadForm").onsubmit = async (e) => {
+            e.preventDefault();
+            const form = new FormData(e.target);
+            const res = await fetch("/upload", {
+                method: "POST",
+                body: form
+            });
+            const data = await res.json();
+            alert(data.message);
+        };
+
+        document.getElementById("askForm").onsubmit = async (e) => {
+            e.preventDefault();
+            const question = e.target.question.value;
+            const res = await fetch("/ask", {
+                method: "POST",
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({question})
+            });
+            const data = await res.json();
+            document.getElementById("responseBox").innerText = data.answer;
+        };
+    </script>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document QA Chatbot</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f2f6fc;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 40px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        form {
+            margin-bottom: 30px;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 10px;
+            color: #34495e;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccd1d9;
+            border-radius: 8px;
+            box-sizing: border-box;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        #responseBox {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #ecf0f1;
+            border-left: 5px solid #3498db;
+            border-radius: 10px;
+            white-space: pre-line;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                margin: 20px;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📄 Document QA Chatbot</h1>
+
+        <form id="uploadForm">
+            <label>Upload Folder Path:</label>
+            <input type="text" name="folder_path" placeholder="Enter folder path..." required>
+            <button type="submit">Upload & Ingest</button>
+        </form>
+
+        <form id="askForm">
+            <label>Ask a Question:</label>
+            <input type="text" name="question" placeholder="Type your question..." required>
+            <button type="submit">Ask</button>
+        </form>
+
+        <div id="responseBox"></div>
+    </div>
+
+    <script>
+        document.getElementById("uploadForm").onsubmit = async (e) => {
+            e.preventDefault();
+            const form = new FormData(e.target);
+            const res = await fetch("/upload", {
+                method: "POST",
+                body: form
+            });
+            const data = await res.json();
+            alert(data.message);
+        };
+
+        document.getElementById("askForm").onsubmit = async (e) => {
+            e.preventDefault();
+            const question = e.target.question.value;
+            const res = await fetch("/ask", {
+                method: "POST",
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ question })
+            });
+            const data = await res.json();
+            document.getElementById("responseBox").innerText = data.answer;
+        };
+    </script>
+</body>
+</html>
