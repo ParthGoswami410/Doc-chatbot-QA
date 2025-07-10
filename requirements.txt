@@ -1,0 +1,11 @@
+flask
+python-dotenv
+sentence-transformers
+faiss-cpu
+PyPDF2
+markdown
+openai
+tqdm
+nltk
+numpy
+scikit-learn

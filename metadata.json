@@ -1,0 +1,12 @@
+[
+  {
+    "doc": "Ai.pdf",
+    "chunk": "Artificial Intelligence (AI) is the simulation of human intelligence in machines that are programmed to think and learn like humans. AI includes technologies such as natural language processing, speech recognition, machine vision, and decision-making systems. It is widely used in autonomous vehicles, recommendation engines, fraud detection, and virtual assistants like Siri and Alexa.",
+    "chunk_id": 0
+  },
+  {
+    "doc": "Machine-Learning.pdf",
+    "chunk": "Large Language Models (LLMs) are advanced AI systems trained on massive text datasets to understand and generate human-like language. They use transformer architectures and are capable of tasks like summarization, translation, question answering, and code generation. Popular LLMs include GPT-4, Claude, Gemini, and LLaMA. LLMs are the foundation of modern chatbots and AI assistants.",
+    "chunk_id": 0
+  }
+]
